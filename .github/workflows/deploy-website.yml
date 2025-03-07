@@ -11,6 +11,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Cache Zola Docker image
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: zola-deploy-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            zola-deploy-${{ runner.os }}-
       - name: Build website using zola
         uses: shalzz/zola-deploy-action@v0.20.0
         env:
