@@ -1,0 +1,10 @@
++++
+title = "Home"
++++
+
+# Gabriel (SirMonteiro) place on the internet
+
+Hello, I'm Gabriel, also known as SirMonteiro. In this place, I pretend to share some of my experiments/projects as I can help someone or at least make someone's day more enjoyable.
+
+{{ img(id="https://app.greenweb.org/api/v3/greencheckimage/gabrielsouza.top", class="center", width="200px", height="95px", alt="This website runs on green hosting - verified by thegreenwebfoundation.org") }}
+{{ img(id="https://count.getloli.com/@gabrielsouzatop?name=gabrielsouzatop&theme=rule34&darkmode=auto", class="center", alt="SirMonteiro Counter") }}

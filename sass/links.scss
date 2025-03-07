@@ -1,0 +1,113 @@
+@import "utils/theme";
+
+main {
+    max-width: 580px;
+}
+
+// Profile picture styling
+#profile {
+    text-align: center;
+    margin-bottom: 1em;
+
+    img {
+        width: 96px;
+        height: 96px;
+        border-radius: 9999px;
+        object-fit: contain;
+    }
+
+    h1 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+// Profile icons container styling
+#profile-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+    a {
+        padding: .5rem;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        transition-duration: .15s;
+
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Link buttons
+#links-container {
+    width: 100%;
+
+    div {
+        width: 100%;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+
+        a {
+            width: 100%;
+            text-decoration: none;
+            background-color: map-get($dark-theme, surface0);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: map-get($dark-theme, surface1);
+            }
+
+            [data-theme="light"] & {
+                background-color: map-get($light-theme, surface0);
+
+                &:hover {
+                    background-color: map-get($light-theme, surface1);
+                }
+            }
+
+            p {
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            svg{
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+
+    #profile h1 {
+        font-size: 14px;
+    }
+}

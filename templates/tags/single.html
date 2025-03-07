@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Tag: {{ term.name }}</h1>
+<hr>
+
+{% for page in term.pages %}
+<article class="post">
+  <span>{{ page.date }}</span>
+  <h2><a href="{{ page.permalink }}">{{ page.title | title }}</a></h2>
+</article>
+{% endfor %}
+
+{% endblock content %}

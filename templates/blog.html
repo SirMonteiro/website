@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>
+  {{ section.title }}
+</h1>
+{{ section.content | safe }}
+<hr>
+
+{% for page in paginator.pages %}
+<article class="post">
+  <span>{{ page.date }}</span>
+  <h2><a href="{{ page.permalink }}">{{ page.title | title }}</a></h2>
+  {% if page.taxonomies.tags %}
+    <div class="tags">
+      {% for tag in page.taxonomies.tags %}
+      <span><a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">#{{ tag }}</a></span>
+      {% endfor %}
+    </div>
+  {% endif %}
+</article>
+{% endfor %}
+{% if paginator.total_pages != 1 %}<nav class="pagination">
+  {% if paginator.previous %}
+  <a href="{{ paginator.previous }}">‹ Previous</a>
+  {% endif %}{% if paginator.next %}
+  <a href="{{ paginator.next }}">Next ›</a>
+  {% endif %}
+</nav>{% endif %}
+<img alt="moe is loading.." class="moe" id="target" loading="lazy" src="">
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var x = new XMLHttpRequest();
+    x.open("GET", "/moe.json", true);
+    x.onreadystatechange = function () {
+      if (x.readyState === 4 && x.status === 200) {
+        var d = JSON.parse(x.responseText).urls;
+        document.getElementById("target").src = d[Math.floor(Math.random() * d.length)];
+      }
+    };
+    x.send();
+  });
+</script>
+{% endblock content %}

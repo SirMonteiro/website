@@ -1,0 +1,1 @@
+{% macro icon(name) %} {% set lower_name = name | lower %} {% set src = "/icons/" ~ lower_name ~ ".svg" %} {% set svg = load_data(path=src) %}<span class="icon">{{ svg | safe }}</span>{% endmacro %}

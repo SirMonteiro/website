@@ -1,0 +1,22 @@
+{% set url = config.base_url %}
+<header>
+  <div class="terminal-logo">
+    <div class="terminal-prompt">
+      <a href="{{url}}">{{ config.author }}</a>
+    </div>
+  </div>
+  <nav>
+    <a class="menu-item" href="{{url}}">/Home</a>
+    <a class="menu-item" href="{{url}}links">/Links</a>
+    <a class="menu-item" href="{{url}}blog">/Blog</a>
+    <a class="menu-item" href="{{url}}about">/About</a>
+    <a id="theme-toggle">
+      <span id="theme-moon" class="theme-icon">
+        {{icons::icon(name="moon")}}
+      </span>
+      <span id="theme-sun" class="theme-icon">
+        {{icons::icon(name="sun")}}
+      </span>
+    </a>
+  </nav>
+</header>

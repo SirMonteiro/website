@@ -1,0 +1,359 @@
+@import "utils/theme";
+
+@mixin apply-theme($theme) {
+    background-color: map-get($theme, base);
+    color: map-get($theme, text);
+}
+
+html {
+    color-scheme: light dark;
+}
+
+body {
+    @include apply-theme($dark-theme);
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    line-height: 1.5;
+}
+
+[data-theme="light"] body {
+    @include apply-theme($light-theme);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    border-radius: .125rem;
+    color: map-get($dark-theme, blue);
+
+    &:hover {
+        // color: map-get($dark-theme, subtext0);
+        background-color: map-get($dark-theme, overlay0);
+    }
+
+    [data-theme="light"] & {
+        color: map-get($light-theme, blue);
+
+        &:hover {
+            // color: map-get($light-theme, subtext0);
+            background-color: map-get($light-theme, overlay0);
+        }
+    }
+}
+
+p,
+li,
+figcaption {
+    text-wrap: pretty;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+blockquote {
+    margin: 0;
+    padding: 1rem;
+    border-left: .25rem solid map-get($dark-theme, yellow);
+    color: map-get($dark-theme, text);
+
+    [data-theme="light"] & {
+        border-left: .25rem solid map-get($light-theme, yellow);
+        color: map-get($light-theme, text);
+    }
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: map-get($dark-theme, overlay0);
+
+    [data-theme="light"] & {
+        background: map-get($light-theme, overlay0);
+    }
+}
+
+pre,
+p code {
+    font-family: Hack, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+    background-color: map-get($dark-theme, crust) !important;
+    border-radius: .25rem;
+}
+
+pre {
+    overflow: auto;
+    padding: .625rem;
+}
+
+p code {
+    padding: .1rem .4rem;
+}
+
+table {
+    display: inline-table;
+    width: fit-content;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-collapse: collapse;
+    margin: 1rem 0;
+
+    th,
+    td {
+        padding: .25rem;
+    }
+
+    th:not(:last-child),
+    td:not(:last-child) {
+        border-right: .1rem solid map-get($dark-theme, overlay0);
+    }
+
+    thead tr,
+    tr:not(:last-child) {
+        border-bottom: .1rem solid map-get($dark-theme, overlay0);
+    }
+
+    [data-theme="light"] & {
+
+        th:not(:last-child),
+        td:not(:last-child) {
+            border-right-color: map-get($light-theme, overlay0);
+        }
+
+        thead tr,
+        tr:not(:last-child) {
+            border-bottom-color: map-get($light-theme, overlay0);
+        }
+    }
+}
+
+.footnote-definition {
+    margin-left: 1rem;
+}
+
+.footnote-definition p {
+    display: inline;
+    padding-left: .625rem;
+}
+
+
+[data-theme="dark"] #theme-sun {
+    display: none;
+}
+
+[data-theme="light"] #theme-moon {
+    display: none;
+}
+
+// .icon svg {
+//     fill: map-get($dark-theme, subtext1);
+
+//     [data-theme="light"] & {
+//         fill: map-get($light-theme, subtext1);
+//     }
+// }
+
+header {
+    max-width: 50rem;
+    margin: 1rem auto;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        a {
+            padding: 0 1rem;
+        }
+
+        #theme-toggle {
+            cursor: pointer;
+
+            span {
+                display: block;
+                width: 1.5em;
+                height: 1.5em;
+            }
+        }
+    }
+
+    .terminal-logo {
+
+        a {
+            color: map-get($dark-theme, yellow);
+            padding: 0.1rem;
+
+            &:hover {
+                color: map-get($dark-theme, base);
+                background-color: map-get($dark-theme, yellow);
+            }
+
+            [data-theme="light"] & {
+                color: map-get($light-theme, yellow);
+
+                &:hover {
+                    color: map-get($light-theme, base);
+                    background-color: map-get($light-theme, yellow);
+                }
+            }
+        }
+    }
+
+    .terminal-prompt {
+        position: relative;
+        white-space: nowrap;
+    }
+
+    .terminal-prompt::before {
+        content: "> ";
+    }
+
+    .terminal-prompt::after {
+        content: "";
+        -webkit-animation: cursor 0.8s infinite;
+        animation: cursor 0.8s infinite;
+        background: map-get($dark-theme, yellow);
+
+        [data-theme="light"] & {
+            background: map-get($light-theme, yellow);
+        }
+
+        border-radius: 0;
+        display: inline-block;
+        height: 1em;
+        margin-left: 0.2em;
+        width: 3px;
+        bottom: -2px;
+        position: relative;
+    }
+
+    @-webkit-keyframes cursor {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes cursor {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.center img {
+    display: block;
+    margin: 1rem auto;
+}
+
+.round, .round img{
+    border-radius: 9999px;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -36px;
+    height: 52px;
+}
+
+@media only screen and (max-width: 36rem) {
+    header {
+        justify-content: flex-start;
+        div {
+            width: 100%;
+        }
+
+        nav {
+            a {
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 20rem) {
+    header nav {
+        flex-direction: column;
+    }
+}
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+
+    h2 {
+        margin: 0;
+    }
+
+    span {
+        font-size: 1.05em;
+    }
+}
+
+.tags span {
+    margin-right: .5rem;
+}
+
+.pagination {
+    font-size: 1.25em;
+}
+
+.tags-list {
+    display: grid;
+    font-size: 1.33em;
+}
+
+.moe {
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  right: 8px;
+  max-width: 25%;
+}

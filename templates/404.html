@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{% set page = get_page(path="404.md") %}
+{{ page.content
+| replace(from="$AUTHOR", to=config.author)
+| replace(from="$BASE_URL", to=(config.base_url | regex_replace(pattern=`http.*:\/\/`, rep=`$1`) | replace(from="/", to="")))
+| safe
+}}
+
+{% endblock content %}
