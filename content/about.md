@@ -6,7 +6,7 @@ description="A little bit about me."
 # Gabriel (SirMonteiro) Monteiro de Souza
 
 <div class="vcard h-card">
-       {{ img(id="https://avatars.githubusercontent.com/u/29388757", class="u-photo photo round", alt="Gabriel Photo" width="192px") }}
+       {{ img(id="https://avatars.githubusercontent.com/u/29388757", class="u-photo photo round", alt="Gabriel Photo" width="192") }}
         <a class="u-url url fn n" href="https://gabrielsouza.top" rel="me">
             <span class="p-given-name given-name">Gabriel</span>
             <span class="p-additional-name additional-name">Monteiro</span>
