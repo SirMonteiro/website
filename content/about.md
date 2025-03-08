@@ -14,7 +14,7 @@ description="A little bit about me."
             <span class="p-nickname nickname">(SirMonteiro)</span>
         </a>
         <div class="p-org org">University of São Paulo</div>
-        <a class="u-email email" href="mailto:me@gabrielsouza.top">me@gabrielsouza.top</a>
+        <a class="u-email email" href="mailto:me@gabrielsouza.top" rel="me">me@gabrielsouza.top</a>
         <div class="p-adr adr h-adr">
             <div class="p-street-address street-address">Rua Arlindo Béttio, 1000</div>
             <span class="p-locality locality">São Paulo</span>

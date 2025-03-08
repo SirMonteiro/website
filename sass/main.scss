@@ -12,7 +12,7 @@ html {
 body {
     @include apply-theme($dark-theme);
     margin: 0;
-    font-family: "Arial", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -93,7 +93,7 @@ hr {
 
 pre,
 p code {
-    font-family: Hack, DejaVu Sans Mono, Monaco, Consolas, Ubuntu Mono, monospace;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
     background-color: map-get($dark-theme, crust) !important;
     border-radius: .25rem;
 }

@@ -44,6 +44,7 @@
   <meta itemprop="description" content="{{ page.description | default(value=config.description) }}">
   <meta itemprop="image" content="{{ get_url(path=config.extra.favicon) | safe }}">
   <title>{% if section -%}{{ section.title }} | {% endif %} {{ config.title }}</title>
+  {% set css = load_data(path="main.css") %}<style>{{css | safe}}</style>
   {%- set stylesheets = [] -%}
   {%- if config.extra.stylesheets -%}
   {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%}
@@ -62,6 +63,4 @@
           }
       </style>
   </noscript>
-  {% set css = load_data(path="main.css") %}
-  <style>{{css | safe}}</style>
 </head>
