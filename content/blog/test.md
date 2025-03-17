@@ -1,7 +1,4 @@
-
-
-
-> Written with [StackEdit](https://stackedit.io/).+++
+.+++
 title=""
 date=""
 description=""
@@ -9,5 +6,5 @@ description=""
 tags=[""]
 +++
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjMyODg5NzIsNzMwOTk4MTE2XX0=
+eyJoaXN0b3J5IjpbMTE1MDY4MTA2Niw3MzA5OTgxMTZdfQ==
 -->
