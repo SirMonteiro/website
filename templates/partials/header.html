@@ -1,66 +1,65 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <base href="{{ config.base_url | safe }}">
-  <meta name="theme-color" content="#1e1e2e">
-  <meta name="description" content="{{ page.description | default(value=config.description) }}">
-  <meta name="author" content="{{ config.author }}">
-  <meta name="robots" content="index,follow">
-  <meta name="googlebot" content="index,follow">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% if config.extra.favicon %} {% set favicon = resize_image(path=config.extra.favicon, format="png", width=32, height=32)%}
-  <link rel="icon" type="image/png" href="{{ favicon.url }}">
-  <link rel="apple-touch-icon" href="{{ get_url(path=config.extra.favicon) }}">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <base href="{{ config.base_url | safe }}" />
+  <meta name="theme-color" content="#1e1e2e" />
+  <meta name="description" content="{{ page.description | default(value=config.description) }}" />
+  <meta name="author" content="{{ config.author }}" />
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  {% if config.extra.favicon %}
+  <link rel="icon" type="image/png" href="{{ get_url(path=config.extra.favicon) }}" />
+  <link rel="icon" href="{{ get_url(path="images/favicon.ico") }}" sizes="48x48 32x32" />
+  <link rel="apple-touch-icon" href="{{ get_url(path="images/apple-touch-icon.png") }}" />
   {% endif %} {% if config.generate_feeds | default(value=config.generate_feed) %} {% for feed in config.feed_filenames %} {% if feed == "atom.xml" %}
-  <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }} - Atom Feed"
-      href="{{ get_url(path=feed, trailing_slash=false) | safe }}">{% elif feed == "rss.xml" %}
-  <link rel="alternate" type="application/rss+xml" title="{{ config.title | safe }} - RSS Feed"
-      href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ config.title | safe }} - Atom Feed" href="{{ get_url(path=feed, trailing_slash=false) | safe }}" />
+  {% elif feed == "rss.xml" %}
+  <link rel="alternate" type="application/rss+xml" title="{{ config.title | safe }} - RSS Feed" href="{{ get_url(path=feed, trailing_slash=false) | safe }}" />
   {% else %}
-  <link rel="alternate" href="{{ get_url(path=feed, trailing_slash=false) | safe }}">
+  <link rel="alternate" href="{{ get_url(path=feed, trailing_slash=false) | safe }}" />
   {% endif %} {% endfor %} {% endif %}
-  <link rel="me" href="https://github.com/sirmonteiro/">
-  <link rel="me" href="https://mastodon.social/@gabrielmontsms">
-  <link rel="me" href="https://keybase.io/gabrieldesouza">
-  {% if current_url %}<meta property="og:url" content="{{ current_url }}">
-  <meta name="twitter:url" content="{{ current_url }}">{% endif %}
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}">
-  <meta property="og:description" content="{{ page.description | default(value=config.description) }}">
-  <meta property="og:image" content="{{ get_url(path=config.extra.favicon) | safe }}">
-  <meta property="og:image:alt" content="Website logo">
-  <meta property="og:site_name" content="{{ config.title }}">
-  <meta property="og:locale" content="en_US">
-  <meta property="article:author" content="{{ config.author }}">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:creator" content="@gabrielmontsms">
-  <meta name="twitter:title" content="{{ page.title | default(value=config.title) | safe }}">
-  <meta name="twitter:description" content="{{ page.description | default(value=config.description) }}">
-  <meta name="twitter:image" content="{{ get_url(path=config.extra.favicon) | safe }}">
-  <meta name="twitter:image:alt" content="Website logo">
-  <meta name="twitter:dnt" content="on">
-  <meta name="fediverse:creator" content="@gabrielmontsms@mastodon.social">
-  <meta itemprop="name" content="{{ page.title | default(value=config.title) | safe }}">
-  <meta itemprop="description" content="{{ page.description | default(value=config.description) }}">
-  <meta itemprop="image" content="{{ get_url(path=config.extra.favicon) | safe }}">
+  <link rel="me" href="https://github.com/sirmonteiro/" />
+  <link rel="me" href="https://mastodon.social/@gabrielmontsms" />
+  <link rel="me" href="https://keybase.io/gabrieldesouza" />
+  {% if current_url %}
+  <meta property="og:url" content="{{ current_url }}" />
+  <meta name="twitter:url" content="{{ current_url }}" />
+  {% endif %}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ page.title | default(value=config.title) | safe }}" />
+  <meta property="og:description" content="{{ page.description | default(value=config.description) }}" />
+  <meta property="og:image" content="{{ get_url(path=config.extra.favicon) | safe }}" />
+  <meta property="og:image:alt" content="Website logo" />
+  <meta property="og:site_name" content="{{ config.title }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:author" content="{{ config.author }}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@gabrielmontsms" />
+  <meta name="twitter:title" content="{{ page.title | default(value=config.title) | safe }}" />
+  <meta name="twitter:description" content="{{ page.description | default(value=config.description) }}" />
+  <meta name="twitter:image" content="{{ get_url(path=config.extra.favicon) | safe }}" />
+  <meta name="twitter:image:alt" content="Website logo" />
+  <meta name="twitter:dnt" content="on" />
+  <meta name="fediverse:creator" content="@gabrielmontsms@mastodon.social" />
+  <meta itemprop="name" content="{{ page.title | default(value=config.title) | safe }}" />
+  <meta itemprop="description" content="{{ page.description | default(value=config.description) }}" />
+  <meta itemprop="image" content="{{ get_url(path=config.extra.favicon) | safe }}" />
   <title>{% if section -%}{{ section.title }} | {% endif %} {{ config.title }}</title>
-  {% set css = load_data(path="main.css") %}<style>{{css | safe}}</style>
-  {%- set stylesheets = [] -%}
-  {%- if config.extra.stylesheets -%}
-  {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%}
-  {%- endif -%}
-  {%- if page.extra.stylesheets -%}
-  {%- set stylesheets = stylesheets | concat(with=page.extra.stylesheets) -%}
-  {%- endif -%}
-  {%- for stylesheet in stylesheets %}
-  <link rel="stylesheet" href="{{ get_url(path=stylesheet, cachebust=true) | safe }}">
+  {% set css = load_data(path="main.css") %}
+  <style>
+    {{css | safe}}
+  </style>
+  {%- set stylesheets = [] -%} {%- if config.extra.stylesheets -%} {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%} {%- endif -%} {%- if page.extra.stylesheets -%} {%- set stylesheets = stylesheets |
+  concat(with=page.extra.stylesheets) -%} {%- endif -%} {%- for stylesheet in stylesheets %}
+  <link rel="stylesheet" rel="preload" href="{{ get_url(path=stylesheet, cachebust=true) | safe }}" />
   {%- endfor %}
   <noscript>
-      <style>
-          #theme-toggle,
-          .moe {
-              display: none;
-          }
-      </style>
+    <style>
+      #theme-toggle,
+      .moe {
+        display: none;
+      }
+    </style>
   </noscript>
 </head>
