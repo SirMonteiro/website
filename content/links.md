@@ -11,6 +11,7 @@ items = [
     { name = "Email", url = "mailto:me@gabrielsouza.top" },
     { name = "LinkedIn", url = "https://www.linkedin.com/in/gabrieldesouza7/" },
     { name = "GitHub", url = "https://github.com/SirMonteiro/" },
+    { name = "GPG", url = "/gabrielsouza-pubkey.asc" },
 ]
 links = [
     { name = "Email", url = "mailto:me@gabrielsouza.top" },

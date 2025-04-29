@@ -28,3 +28,5 @@ description="A little bit about me."
 </div>
 
 For now I am tired making this site work, so I will write this later. But thanks for reaching here!
+
+Here is my [resume](/Gabriel_Souza_Resume.pdf) signed by [Gov.br](https://validar.iti.gov.br/) and [GPG](/Gabriel_Souza_Resume.sig)
