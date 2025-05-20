@@ -19,6 +19,7 @@
   {% else %}
   <link rel="alternate" href="{{ get_url(path=feed, trailing_slash=false) | safe }}" />
   {% endif %} {% endfor %} {% endif %}
+  <link rel="me" href="{{ config.base_url }}about" />
   <link rel="me" href="https://github.com/sirmonteiro/" />
   <link rel="me" href="https://mastodon.social/@gabrielmontsms" />
   <link rel="me" href="https://keybase.io/gabrieldesouza" />
