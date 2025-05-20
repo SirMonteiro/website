@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<span>{{ page.date }} - {{ page.reading_time }} minute{% if page.reading_time != 1 %}s{% endif %}</span>
-<h1>{{ page.title }}</h1>
+<article class="h-entry">
+<span><time class="dt-published">{{ page.date }}</time> - {{ page.reading_time }} minute{% if page.reading_time != 1 %}s{% endif %}</span>
+<a class="u-url u-uid" href="{{ page.permalink }}">
+<h1 class="e-content p-name">{{ page.title }}</h1></a>
 {% if page.taxonomies.tags %}
 <div class="tags">
   {% for tag in page.taxonomies.tags %}
-  <span><a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">#{{ tag }}</a></span>
+  <span><a class="p-category" href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}" rel="tag">#{{ tag }}</a></span>
   {% endfor %}
 </div>
 {% endif %}
 <hr>
-<article>
 {{ page.content | safe }}
 </article>
 {% endblock content %}
