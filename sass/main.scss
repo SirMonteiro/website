@@ -20,6 +20,11 @@ body {
     @include apply-theme($light-theme);
 }
 
+:where(h1) {
+  margin-block: 0.67em;
+  font-size: 2em;
+}
+
 main {
     max-width: 1200px;
     margin: 0 auto;
