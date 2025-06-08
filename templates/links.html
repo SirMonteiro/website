@@ -1,13 +1,13 @@
 {% extends "base.html" %} {% block content %}
 <div id="profile" class="center">
-  <img src="{{ config.extra.author_picture }}" alt="Photo of {{config.author}}" loading="lazy" decoding="async">
+  <img src="{{ config.extra.author_picture }}" alt="Photo of {{config.author}}" loading="lazy" decoding="async" />
   <h1>{{ page.title }}</h1>
   <h2>{{ page.description }}</h2>
   <span>⚲ {{ page.extra.location }}</span>
 </div>
 <div id="profile-icons">
   {% for link in page.extra.items %}
-  <a href="{{ link.url }}" rel="me">{{ icons::icon(name=link.name) }}</a>
+  <a href="{{ link.url }}" rel="me" aria-label="{{ link.name | capitalize }}">{{ icons::icon(name=link.name) }}</a>
   {% endfor %}
 </div>
 <div id="links-container">
