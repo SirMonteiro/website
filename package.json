@@ -1,0 +1,10 @@
+{
+  "name": "gabrielsouzaswebsite",
+  "version": "0.0.0",
+  "description": "Dummy node project file to pass any CI/CD npm install command",
+  "homepage": "https://github.com/SirMonteiro/website#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirMonteiro/website.git"
+  }
+}
