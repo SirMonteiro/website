@@ -12,10 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build website using zola
-        uses: shalzz/zola-deploy-action@v0.20.0
-        env:
-          BUILD_ONLY: true
-          CHECK_LINKS: true
+        uses: docker://ghcr.io/sirmonteiro/zola-action:v0.20.0
       - name: Deploy to CF Pages
         uses: cloudflare/wrangler-action@v3
         with:
