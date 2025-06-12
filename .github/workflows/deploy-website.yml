@@ -3,7 +3,7 @@ name: Build and Deploy to all web hosting providers
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: [$default-branch]
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -51,6 +51,36 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: "./public-www"
+
+      - name: Deploy to Netlify
+        if: matrix.variant == 'www'
+        uses: South-Paw/action-netlify-cli@v2
+        id: netlify
+        with:
+          args: deploy --json --prod --no-build --dir './public-www' --message 'production [${{ github.sha }}]'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Deploy to Vercel
+        if: matrix.variant == 'www'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          vercel-args: "--prod --no-wait"
+          vercel-project-name: gabrielsouzatop
+          working-directory: ./public-www
+          github-comment: false
+
+      - name: Deploy to Firebase
+        if: matrix.variant == 'www'
+        uses: docker://w9jds/firebase-action:master
+        with:
+          args: deploy --only hosting -p ./public-www
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
   deploy-to-github-pages:
     environment:
