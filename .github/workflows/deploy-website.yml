@@ -82,6 +82,7 @@ jobs:
           args: deploy --only hosting -p ./public-www
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+          PROJECT_ID: gabrielsouzawebsite
 
   deploy-to-github-pages:
     environment:
