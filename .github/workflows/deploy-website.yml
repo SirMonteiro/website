@@ -32,7 +32,7 @@ jobs:
       - name: Build using zola for ${{ matrix.variant }}
         uses: docker://ghcr.io/sirmonteiro/zola-action:v0.20.0
         with:
-          base_url: ${{ matrix.variant == 'www' && 'https://www.gabrielsouza.top' || '' }}
+          base_url: ${{ matrix.variant == 'www' && 'https://www.gabrielsouza.top/' || '' }}
           output_dir: public-${{ matrix.variant }}
 
       - name: Deploy canonical page to CF Pages
