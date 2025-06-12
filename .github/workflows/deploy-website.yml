@@ -71,6 +71,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           vercel-args: "--prod --no-wait"
           vercel-project-name: gabrielsouzatop
+          vercel-version: 41.7.8
           working-directory: ./public-www
           github-comment: false
 
