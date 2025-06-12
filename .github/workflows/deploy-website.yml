@@ -84,6 +84,13 @@ jobs:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
           PROJECT_ID: gabrielsouzawebsite
 
+      - name: Deploy to Render
+        if: matrix.variant == 'www'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
+
   deploy-to-github-pages:
     environment:
       name: github-pages
