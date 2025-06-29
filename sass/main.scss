@@ -34,7 +34,6 @@ main {
 }
 
 a {
-    text-decoration: none;
     border-radius: .125rem;
     color: map-get($dark-theme, blue);
 
@@ -182,6 +181,10 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    
+    a {
+      text-decoration: none;
+    }
 
     nav {
         display: flex;
