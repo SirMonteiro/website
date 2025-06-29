@@ -8,9 +8,7 @@ author = "Gabriel Monteiro de Souza"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-taxonomies = [
-    { name = "tags", feed = true, paginate_by = 25 },
-]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 25 }]
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
@@ -63,4 +61,4 @@ index_format = "elasticlunr_json"
 
 [extra]
 favicon = "images/favicon.png"
-author_picture = "https://avatars.githubusercontent.com/u/29388757"
+author_picture = "https://wsrv.nl/?url=https://avatars.githubusercontent.com/u/29388757&default=1&q=75&w="
