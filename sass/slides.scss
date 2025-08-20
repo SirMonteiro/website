@@ -1,0 +1,11 @@
+img[alt~="align-bottom-right"] {
+  position: initial !important;
+}
+
+img[alt*="w:"] {
+  max-width: 16rem;
+}
+
+img[alt*="h:"] {
+  max-height: 24rem;
+}

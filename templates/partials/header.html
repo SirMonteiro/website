@@ -52,8 +52,7 @@
   <style>
     {{css | safe}}
   </style>
-  {%- set stylesheets = [] -%} {%- if config.extra.stylesheets -%} {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%} {%- endif -%} {%- if page.extra.stylesheets -%} {%- set stylesheets = stylesheets |
-  concat(with=page.extra.stylesheets) -%} {%- endif -%} {%- for stylesheet in stylesheets %}
+  {%- set stylesheets = [] -%} {%- if config.extra.stylesheets -%} {%- set stylesheets = stylesheets | concat(with=config.extra.stylesheets) -%} {%- endif -%} {%- if page.extra.stylesheets -%} {%- set stylesheets = stylesheets | concat(with=page.extra.stylesheets) -%} {%- endif -%} {%- if page.ancestors -%} {%- set section = get_section(path=page.ancestors | last) -%} {%- endif -%} {%- if section.extra.stylesheets -%} {%- set stylesheets = stylesheets | concat(with=section.extra.stylesheets) -%} {%- endif -%} {%- for stylesheet in stylesheets %}
   <link rel="stylesheet" href="{{ get_url(path=stylesheet, cachebust=true) | safe }}" />
   {%- endfor %}
   <noscript>

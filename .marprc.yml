@@ -1,0 +1,4 @@
+allowLocalFiles: true
+output: "./static/slides/"
+parallel: 8
+pdf: true
