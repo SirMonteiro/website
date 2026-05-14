@@ -13,5 +13,8 @@ In this page I want to share some of my friends website, gradually I am trying t
 Some of them are musicians, game designers, programmers, and some shares their life experiences, so I hope you enjoy their work as much as I do.
 
 - [André Rocha](https://andrerv.org/)
-- [Henrique Trigo](https://henriquetrigo.com.br)
+- [Henrique Trigo](https://web.archive.org/web/https://henriquetrigo.com.br/)
 - [Otávio Bambans](https://bambans.top/)
+- [João Fukuda](https://fukuda.sh/)
+- [Caio Bernardo](https://caiobernardo.top/)
+- [Enzo Dimitri](https://vondimitri.com/)
