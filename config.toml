@@ -19,12 +19,10 @@ minify_html = false
 # When set to "true", a feed is automatically generated.
 generate_feeds = true
 
-[markdown]
+[markdown.highlighting]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-extra_syntaxes_and_themes = ["highlight_themes"]
-highlight_theme = "catppuccin_mocha"
+theme = "catppuccin-mocha"
 
 # When set to "true", emoji aliases translated to their corresponding
 # Unicode emoji equivalent in the rendered Markdown files. (e.g.: :smile: => 😄)
