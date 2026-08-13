@@ -1,0 +1,14 @@
+{% component img(src: string, alt: string = "", class = "", caption = "", href = "", ...attrs) %}
+  {%- if href -%}
+      {%- set is_external = href is starting_with(pat="http") or href is starting_with(pat="//") -%}
+      {%- set url = href if is_external else get_url(path=href) -%}
+      <a href="{{ url }}"{% if is_external %} target="_blank" rel="noopener noreferrer external"{% endif %}>
+  {%- endif -%}
+  <img src="{{src}}" alt="{{alt}}" {% if class %}class="{{class}}"{% endif %} {% for k, v in attrs %}{{k}}="{{v}}" {% endfor %}loading="lazy" decoding="async">
+  {%- if href -%}
+      </a>
+  {%- endif -%}
+  {% if caption %}
+    <em>{{caption}}</em>
+  {% endif %}
+{% endcomponent img %}

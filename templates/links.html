@@ -7,14 +7,14 @@
 </div>
 <div id="profile-icons">
   {% for link in page.extra.items %}
-  <a href="{{ link.url }}" rel="me" aria-label="{{ link.name | capitalize }}">{{ icons::icon(name=link.name) }}</a>
+  <a href="{{ link.url }}" rel="me" aria-label="{{ link.name | capitalize }}">{{<icon name={link.name} />}}</a>
   {% endfor %}
 </div>
 <div id="links-container">
   {% for link in page.extra.links %}
   <div>
     <a href="{{ link.url }}">
-      {{ icons::icon(name=link.name) }}
+        {{<icon name={link.name} />}}
       <p>{{ link.name }}</p>
     </a>
   </div>

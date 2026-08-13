@@ -14,7 +14,7 @@
   {% if page.taxonomies.tags %}
     <div class="tags">
       {% for tag in page.taxonomies.tags %}
-      <span><a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">#{{ tag }}</a></span>
+      <span><a href="{{ get_taxonomy_url(kind="tags", term=tag) | safe }}">#{{ tag }}</a></span>
       {% endfor %}
     </div>
   {% endif %}
