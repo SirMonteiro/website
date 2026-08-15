@@ -1,10 +1,12 @@
 {% set content = page?.content | default(value="") %}{% if content is containing(pat='data-lang="mermaid"') %}
 <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({ theme: "dark" });
-  var blocks = document.querySelectorAll('code[data-lang="mermaid"]');
-  for (var i = 0; i < blocks.length; i++) blocks[i].textContent = blocks[i].innerText.replace(/\u00A0/g, " ");
-  mermaid.run({ querySelector: 'code[data-lang="mermaid"]' });
+  document.addEventListener("DOMContentLoaded", function() {
+    mermaid.initialize({ theme: "dark" })
+    var blocks = document.querySelectorAll('code[data-lang="mermaid"]')
+    for (var i = 0; i < blocks.length; i++) blocks[i].textContent = blocks[i].innerText.replace(/\u00A0/g, " ")
+    mermaid.run({ querySelector: 'code[data-lang="mermaid"]' })
+  })
 </script>
 {% endif %}
 {% if content is containing(pat="$$") or (content is containing(pat="$\\")) %}
