@@ -367,3 +367,9 @@ footer {
   right: 8px;
   max-width: 25%;
 }
+
+pre>code[data-lang]::before {
+  content: attr(data-lang);
+  float: right;
+  color: #888;
+}

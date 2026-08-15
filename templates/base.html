@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ lang | default(value=config.default_language)}}" itemscope itemtype="https://schema.org/Article">
-  {% include 'partials/header.html' %}<body>
-    <script>
-      const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-      document.documentElement.setAttribute("data-theme", theme);
-    </script>
-    {% include 'partials/nav.html' %}
-    <main>{% block content -%} {% endblock content -%}</main>
-    {% include 'partials/footer.html' %}
+  {% include 'partials/header.html' %}<body>{% include 'partials/nav.html' %}
+    <main>{% block content -%} {% endblock content -%}</main>{% include 'partials/footer.html' %}
     <script>
       function themeToggle() {
         const currentTheme = document.documentElement.getAttribute("data-theme");
@@ -18,5 +12,6 @@
       }
       document.getElementById("theme-toggle").addEventListener("click", themeToggle);
     </script>
+    {% include 'partials/scripts.html' %}
   </body>
 </html>

@@ -1,0 +1,25 @@
+{% set content = page?.content | default(value="") %}{% if content is containing(pat='data-lang="mermaid"') %}
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ theme: "dark" });
+  var blocks = document.querySelectorAll('code[data-lang="mermaid"]');
+  for (var i = 0; i < blocks.length; i++) blocks[i].textContent = blocks[i].innerText.replace(/\u00A0/g, " ");
+  mermaid.run({ querySelector: 'code[data-lang="mermaid"]' });
+</script>
+{% endif %}
+{% if content is containing(pat="$$") or (content is containing(pat="$\\")) %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18/dist/contrib/auto-render.min.js" onload="
+    renderMathInElement(document.body, {
+      output: 'mathml',
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false },
+        { left: '\\[', right: '\\]', display: true }
+      ],
+      throwOnError: false
+    })">
+</script>
+{% endif %}

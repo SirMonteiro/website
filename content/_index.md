@@ -12,5 +12,5 @@ Hello, I'm Gabriel, also known as SirMonteiro. In this place, I intend to share 
 </div>
 <div class="center">
 
-{{<img src="https://count.getloli.com/@gabrielsouzatopdev?name=gabrielsouzatop&theme=rule34&darkmode=auto" width="315" height="100" alt="Visitor Counter" title="Look how many visitors :)" />}}
+{{<img src="https://count.getloli.com/@gabrielsouzatop?name=gabrielsouzatop&theme=rule34&darkmode=auto" width="315" height="100" alt="Visitor Counter" title="Look how many visitors :)" />}}
 </div>
